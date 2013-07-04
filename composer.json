@@ -14,9 +14,12 @@
     ],
     "require": {
         "php": ">=5.3.0",
-	"twig/twig": ">=1.8,<2.0-dev",
+        "twig/twig": ">=1.8,<2.0-dev",
         "doctrine/common": ">=2.1,<2.4.x-dev"
     },
+    "suggest": {
+        "sp/bower-bundle": "dev-master"
+    }
     "target-dir": "Ali/DatatableBundle",
     "autoload": {
         "psr-0": {
