@@ -19,7 +19,7 @@
     },
     "suggest": {
         "sp/bower-bundle": "dev-master"
-    }
+    },
     "target-dir": "Ali/DatatableBundle",
     "autoload": {
         "psr-0": {
