@@ -22,9 +22,9 @@
         {% endif %}
         var $js_conf = {{ js_conf | raw }};
         var $js = {};
-        for(key in $js_conf) { 
+        for(key in $js_conf) {
             if ($js_conf.hasOwnProperty(key)) {
-                eval ( ' $js["'+key+'"] = ' + $js_conf[key]+ ' ; ' ); 
+                eval ( ' $js["'+key+'"] = ' + $js_conf[key]+ ' ; ' );
             }
         }
         var $options = {{ js | raw }};
@@ -32,7 +32,7 @@
         {% if multiple %}
         $aoColumnDefs.push({ 'bSortable': false, 'aTargets': [ 0 ] });
         {% endif %}
-        {% if action and not action_twig %} 
+        {% if action and not action_twig %}
         $aoColumnDefs.push({
             "fnRender": function ( oObj ) {
                 var $edit_url = strtr(
@@ -62,7 +62,7 @@
             },
             "aTargets": [ multiple ? {{fields|length}} : ({{fields|length}} -1)  ]
         });
-        {% endif %} 
+        {% endif %}
         var $defaults = {
             "bJQueryUI": true,
             "sPaginationType": "full_numbers",
@@ -104,7 +104,7 @@
         };
         $.extend($defaults,$js);
         $.extend($defaults,$options);
-        eval("var "+ "oTable_"+'{{id}}'.split('-').join('_') + "  = $('#{{id}}').dataTable($defaults)");
+        eval("var "+ "oTable_"+'{{id}}'.split('-').join('_') + "  = $('#{{id}}').dataTable($defaults);");
         $(s).on('click','.button-delete:parent',function(e){
             if (!confirm('{{ 'ali.common.confirm_delete'|trans()  }}')) {
                 return false;
@@ -112,7 +112,7 @@
             $(this).parents('form:eq(0)').submit();
         });
 
-        if (multiple===true) { 
+        if (multiple===true) {
             var chbox =  'input:checkbox[name="dataTables[actions][]"]';
             var chbox_all = 'input:checkbox[name="datatable_action_all"]';
             $(s).on('click','.btn-datatable-multiple:not(.search_init)',function(e){
@@ -160,12 +160,12 @@
             var index = $(this).attr('index');
             var oTable = eval('oTable_{{id}}'.split('-').join('_'));
             if (event.keyCode == '13') {
-                oTable.fnFilter( 
-                    this.value, 
-                    oTable.oApi._fnVisibleToColumnIndex( 
-                        oTable.fnSettings(), 
-                        index 
-                    ) 
+                oTable.fnFilter(
+                    this.value,
+                    oTable.oApi._fnVisibleToColumnIndex(
+                        oTable.fnSettings(),
+                        index
+                    )
                 );
             }
         }).each( function (i) {
@@ -187,9 +187,9 @@
 {% if multiple %}
 <form name="frm-{{id}}">
 {% endif %}
-    <table class="display table table-bordered" id="{{id}}"> 
-        <thead> 
-            <tr> 
+    <table class="display table table-bordered" id="{{id}}">
+        <thead>
+            <tr>
             {% if multiple %}
                 <th width="1%" ><input type="checkbox" name="datatable_action_all" /></th>
             {% endif %}
@@ -201,7 +201,7 @@
             {% if action %}
                 <th>{{ 'ali.common.action'|trans()  }}</th>
             {% endif %}
-            </tr> 
+            </tr>
         </thead>
         {% if search %}
         {% set i = 0 %}

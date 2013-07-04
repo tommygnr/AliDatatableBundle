@@ -72,8 +72,8 @@ var strtr = function (str, from, to) {
 }
 
 function ini_set (varname, newvalue) {
-    // Set a configuration option, returns false on error and the old value of the configuration option on success  
-    // 
+    // Set a configuration option, returns false on error and the old value of the configuration option on success
+    //
     // version: 1109.2015
     // discuss at: http://phpjs.org/functions/ini_set
     // +   original by: Brett Zamir (http://brett-zamir.me)
@@ -86,14 +86,14 @@ function ini_set (varname, newvalue) {
     this.php_js.ini = this.php_js.ini || {};
     this.php_js.ini[varname] = this.php_js.ini[varname] || {};
     oldval = this.php_js.ini[varname].local_value;
- 
+
     var _setArr = function (oldval) { // Although these are set individually, they are all accumulated
         if (typeof oldval === 'undefined') {
             that.php_js.ini[varname].local_value = [];
         }
         that.php_js.ini[varname].local_value.push(newvalue);
     };
- 
+
     switch (varname) {
     case 'extension':
         if (typeof this.dl === 'function') {
@@ -108,8 +108,8 @@ function ini_set (varname, newvalue) {
     return oldval;
 }
 function ksort (inputArr, sort_flags) {
-    // Sort an array by key  
-    // 
+    // Sort an array by key
+    //
     // version: 1109.2015
     // discuss at: http://phpjs.org/functions/ksort
     // +   original by: GeekFG (http://geekfg.blogspot.com)
@@ -144,7 +144,7 @@ function ksort (inputArr, sort_flags) {
         sorter, i, k, that = this,
         strictForIn = false,
         populateArr = {};
- 
+
     switch (sort_flags) {
     case 'SORT_STRING':
         // compare items as strings
@@ -181,7 +181,7 @@ function ksort (inputArr, sort_flags) {
         };
         break;
     }
- 
+
     // Make a list of key names
     for (k in inputArr) {
         if (inputArr.hasOwnProperty(k)) {
@@ -189,14 +189,14 @@ function ksort (inputArr, sort_flags) {
         }
     }
     keys.sort(sorter);
- 
+
     // BEGIN REDUNDANT
     this.php_js = this.php_js || {};
     this.php_js.ini = this.php_js.ini || {};
     // END REDUNDANT
     strictForIn = this.php_js.ini['phpjs.strictForIn'] && this.php_js.ini['phpjs.strictForIn'].local_value && this.php_js.ini['phpjs.strictForIn'].local_value !== 'off';
     populateArr = strictForIn ? inputArr : populateArr;
- 
+
     // Rebuild array with sorted key names
     for (i = 0; i < keys.length; i++) {
         k = keys[i];
@@ -210,7 +210,7 @@ function ksort (inputArr, sort_flags) {
             populateArr[i] = tmp_arr[i];
         }
     }
- 
+
     return strictForIn || populateArr;
 }
 function krsort (inputArr, sort_flags) {
