@@ -13,9 +13,9 @@ class AliDatatableExtension extends \Twig_Extension
     protected $_container;
 
     /**
-     * class constructor 
-     * 
-     * @param ContainerInterface $container 
+     * class constructor
+     *
+     * @param ContainerInterface $container
      */
     public function __construct(ContainerInterface $container)
     {
@@ -34,9 +34,9 @@ class AliDatatableExtension extends \Twig_Extension
 
     /**
      * Converts a string to time
-     * 
+     *
      * @param string $string
-     * @return int 
+     * @return int
      */
     public function datatable($options)
     {
@@ -55,6 +55,7 @@ class AliDatatableExtension extends \Twig_Extension
         $options['search']        = $datatable->getSearch();
         $options['search_fields'] = $datatable->getSearchFields();
         $options['multiple']      = $datatable->getMultiple();
+        $options['filters']       = $datatable->getHasFilters();
         $main_template            = 'AliDatatableBundle:Main:index.html.twig';
         if (isset($options['main_template']))
         {
@@ -69,9 +70,9 @@ class AliDatatableExtension extends \Twig_Extension
 
     /**
      * create delete form
-     * 
+     *
      * @param type $id
-     * @return type 
+     * @return type
      */
     private function createDeleteForm($id)
     {
@@ -82,10 +83,10 @@ class AliDatatableExtension extends \Twig_Extension
 
     /**
      * create form builder
-     * 
+     *
      * @param type $data
      * @param array $options
-     * @return type 
+     * @return type
      */
     public function createFormBuilder($data = null, array $options = array())
     {
