@@ -56,6 +56,7 @@ class AliDatatableExtension extends \Twig_Extension
         $options['search_fields'] = $datatable->getSearchFields();
         $options['multiple']      = $datatable->getMultiple();
         $options['filters']       = $datatable->getHasFilters();
+        $options['filter_config'] = $datatable->getFilterConfig();
         $main_template            = 'AliDatatableBundle:Main:index.html.twig';
         if (isset($options['main_template']))
         {
