@@ -261,7 +261,7 @@ class Datatable
                 'type' => "number-range",
                 'type' => "select",
             )
-        )
+        );
 
         return json_encode($config);
     }
