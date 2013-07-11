@@ -248,13 +248,22 @@ class Datatable
     }
 
     /**
-     * get has_action
+     * get filter configuration in json
      *
-     * @return boolean
+     * @return string
      */
     public function getFilterConfig()
     {
-        return '{}';
+        $config = array(
+            'aoColumns' => array(
+                'type' => "text",
+                'type' => "text",
+                'type' => "number-range",
+                'type' => "select",
+            )
+        )
+
+        return json_encode($config);
     }
 
     /**

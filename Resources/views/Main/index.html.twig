@@ -102,9 +102,10 @@
             },
             "bAutoWidth" : false
         };
+        var filterConfig = {{ filter_config|raw }}
         $.extend($defaults,$js);
         $.extend($defaults,$options);
-        eval("var "+ "oTable_"+'{{id}}'.split('-').join('_') + "  = $('#{{id}}').dataTable($defaults).columnFilter({{ filter_config }});");
+        eval("var "+ "oTable_"+'{{id}}'.split('-').join('_') + "  = $('#{{id}}').dataTable($defaults).columnFilter(filterConfig);");
         $(s).on('click','.button-delete:parent',function(e){
             if (!confirm('{{ 'ali.common.confirm_delete'|trans()  }}')) {
                 return false;
