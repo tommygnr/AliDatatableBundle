@@ -254,6 +254,14 @@ class Datatable
      */
     public function getFilterConfig()
     {
+        return '{
+            aoColumns: [ { type: "text" },
+                     { type: "text" },
+                     { type: "number-range" },
+                     { type: "select" }
+                ]
+
+        }';
         $columns = array(
             (object) array('type' => "text"),
             (object) array('type' => "text"),
