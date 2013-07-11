@@ -254,20 +254,14 @@ class Datatable
      */
     public function getFilterConfig()
     {
-        $config = array(
-            'aoColumns' => (object) array(
-                'type' => "text",
-                'type' => "text",
-                'type' => "number-range",
-                'type' => "select",
-            )
+        $columns = array(
+            (object) array('type' => "text"),
+            (object) array('type' => "text"),
+            (object) array('type' => "number-range"),
+            (object) array('type' => "select"),
         );
 
-        var_dump($config);
-        var_dump(json_encode($config));
-        var_dump(json_encode((object) $config));
-        die;
-
+        $config = array('aoColumns' => $columns);
 
         return json_encode((object) $config);
     }
