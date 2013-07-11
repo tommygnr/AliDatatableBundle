@@ -254,7 +254,7 @@ class Datatable
      */
     public function getFilterConfig()
     {
-        return array();
+        return '{}';
     }
 
     /**
