@@ -102,7 +102,7 @@
             },
             "bAutoWidth" : false
         };
-        var filterConfig = {{ filter_config|raw }}
+        var filterConfig = {{ filter_config|raw }};
         $.extend($defaults,$js);
         $.extend($defaults,$options);
         eval("var "+ "oTable_"+'{{id}}'.split('-').join('_') + "  = $('#{{id}}').dataTable($defaults).columnFilter(filterConfig);");

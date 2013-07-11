@@ -263,6 +263,12 @@ class Datatable
             )
         );
 
+        var_dump($config);
+        var_dump(json_encode($config));
+        var_dump(json_encode((object) $config));
+        die;
+
+
         return json_encode((object) $config);
     }
 
