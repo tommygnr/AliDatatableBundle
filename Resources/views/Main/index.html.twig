@@ -190,22 +190,6 @@
 {% endif %}
     <table class="display table table-bordered" id="{{id}}">
         <thead>
-            {% if filters %}
-            <!-- Render this if column filters are at the top -->
-                <tr>
-                {% if multiple %}
-                    <th width="1%" ><input type="checkbox" name="datatable_action_all" /></th>
-                {% endif %}
-                {% for label,key in fields %}
-                    {% if label != '_identifier_' %}
-                        <th>{{ label }}</th>
-                    {% endif %}
-                {% endfor %}
-                {% if action %}
-                    <th>{{ 'ali.common.action'|trans()  }}</th>
-                {% endif %}
-                </tr>
-            {% endif %}
             <tr>
             {% if multiple %}
                 <th width="1%" ><input type="checkbox" name="datatable_action_all" /></th>
@@ -223,6 +207,22 @@
         {% if search %}
         {% set i = 0 %}
         <tfoot>
+            {% if filters %}
+            <!-- Render this if column filters are at the top -->
+                <tr>
+                {% if multiple %}
+                    <th width="1%" ><input type="checkbox" name="datatable_action_all" /></th>
+                {% endif %}
+                {% for label,key in fields %}
+                    {% if label != '_identifier_' %}
+                        <th>{{ label }}</th>
+                    {% endif %}
+                {% endfor %}
+                {% if action %}
+                    <th>{{ 'ali.common.action'|trans()  }}</th>
+                {% endif %}
+                </tr>
+            {% endif %}
             <tr>
                 {% if multiple %}
                 <th></th>
