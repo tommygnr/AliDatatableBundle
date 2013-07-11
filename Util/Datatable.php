@@ -248,6 +248,16 @@ class Datatable
     }
 
     /**
+     * get has_action
+     *
+     * @return boolean
+     */
+    public function getFilterConfig()
+    {
+        return array();
+    }
+
+    /**
      * retrun true if the actions column is overridden by twig renderer
      *
      * @return boolean
